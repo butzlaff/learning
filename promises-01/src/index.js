@@ -1,38 +1,24 @@
-let car = {
-    model: "Ferrari SF90", 
-    velocity: 0,
-    velocityMax: 300,
-    acceletarion0to100: 2.5
+let komodoShip = {
+    name: "komodo",
+    velocity: 80, 
+    acceleration: 20
 }
 
-const time0To100 = (velocity, acceletarion0to100) => {
-    new Promise((resolve, reject) => {
-    let timeTo100km = acceletarion0to100
-    let timeMilisseconds = 0
-    let intervalId = setInterval(() => {
-        console.log(`Velocidade atual é : ${velocity}`)
-        do{
-        timeMilisseconds += 500
-        velocity += 20
-        console.log(`Velocidade atual é : ${velocity}`)
-        if (timeMilisseconds>timeTo100km){
-            clearInterval(intervalId)
-        } 
-    }while(timeTo100km * 1000 > timeMilisseconds)
-    },500)
-    
-    setTimeout(() => {
-    if(velocity == 100){
-        console.log(`Aceleração bem sucedidade\nVelocidade atual: ${velocity}`)
-        resolve(velocity)
-    }else{
-    console.log(`Velocidade ${velocity}`)
-    reject('Verifique o erro')
-    }
-    },2500   
-    )
-}
-    )
+const velocityAfter2Seconds = (velocity, acceleration) => {
+    new Promise(function(resolve, reject){
+        setTimeout(()=> {
+            if (acceleration > 0){
+                velocity += acceleration * 2
+                console.log(`Nova velocidade ${velocity}`)
+                resolve(velocity)
+            }else{
+                console.log("Aceleração inválida")
+                reject("Não possui aceleração")
+            }}, 1000)
+        })
 }
 
-time0To100(car.velocity, car.acceletarion0to100)
+velocityAfter2Seconds(komodoShip.velocity, komodoShip.acceleration)
+console.log("Execução de uma promise")
+
+//change name to index.js to works
