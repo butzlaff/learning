@@ -1,0 +1,26 @@
+h1 {
+    color: #f00;
+}
+h4 {
+    color: blueviolet;
+}
+/*
+ul {
+    color: darkgoldenrod;
+    background-color: grey;
+}
+*/
+
+.lista {
+    background-position-x: center;
+    border: 3px solid;
+    size: 10rem;
+    height: 26rem;
+    width: 8rem;
+    border-radius: none;
+    line-height: 40px;
+    color: rgb(240, 13, 13);
+    margin: 0 5px;
+    cursor: pointer;
+    text-align: justify;
+}

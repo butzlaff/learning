@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .body {
+        margin: 0%;
+        height: 65%;
+        right: 30%;
+    }
+    div { 
+        width: 70%;
+        margin-left: 30%;
+        height: 65%;
+        left: 30%;
+
+    }
+    </style>
+    <script src="JS/class.js"></script>
+    <script src="JS/index.js"></script>
+</head>
+<body>
+    <div class="imovel">
+    <h1>Cadastro de Imóveis</h1>
+    <br />
+    <p>Qual o tipo do imóvel: </p>
+    <input type="radio" name="tipo" value="Casa" id="tipo">Casa</input>
+    <input type="radio" name="tipo" value="Apartamento" id="tipo">Apartamento</input>
+    <p>Qual a área do imóvel: </p>
+    <input type="text" name="area" id="area" placeholder="Digite a área do imóvel" />
+    <p>Este imóvel está alugado ?</p>
+    <input type="radio" name="alugado" value="Alugado" id="alugado">Sim</input>
+    <input type="radio" name="alugado" value="Vago" id="alugado">Não</input>
+    <p></p>
+    <button type="button" name="cadastro" onclick="cadastrar()">Cadastrar</button>
+     <p>
+</p>   
+</div>
+</body>
+</html>
