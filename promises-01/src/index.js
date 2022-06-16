@@ -1,11 +1,11 @@
 let komodoShip = {
     name: "komodo",
     velocity: 80, 
-    acceleration: 20
+    acceleration: 10
 }
 
 const velocityAfter2Seconds = (velocity, acceleration) => {
-    new Promise(function(resolve, reject){
+   return new Promise(function(resolve, reject){
         setTimeout(()=> {
             if (acceleration > 0){
                 velocity += acceleration * 2
@@ -18,7 +18,14 @@ const velocityAfter2Seconds = (velocity, acceleration) => {
         })
 }
 
-velocityAfter2Seconds(komodoShip.velocity, komodoShip.acceleration)
-console.log("Execução de uma promise")
+velocityAfter2Seconds(komodoShip.velocity, komodoShip.acceleration).then(velocity => {
+        komodoShip.velocity = velocity
+        console.log("Depois de acelerar \n", komodoShip)
+    }).catch(message => {
+        console.log(`Komodo ${message}`)
+    })
 
+
+console.log("Execução de uma promise")
+console.log(komodoShip)
 //change name to index.js to works
