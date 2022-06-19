@@ -1,4 +1,5 @@
 import "core-js"
+import { async } from "regenerator-runtime"
 import "regenerator-runtime/runtime"
 
 let laserGun = {
@@ -19,10 +20,22 @@ async function fire(x, y, z) {
     return[x, y, z]
   }
 
+function loadAmmo(){
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve("Arma Carregada")
+    }, 2000)
+  })
+}
+
 async function moveAndFire(x, y, z) {
   try {
-      let newCoord = await adjustPosition(x, y, z)
+      const adjustPositionPromise = adjustPosition (x, y, z)
+      const loadAmmoPromise = loadAmmo()
+      let promiseResult = await Promise.all([adjustPositionPromise, loadAmmoPromise])
+      let newCoord = promiseResult[0]
       console.log(`Arma ajustada para as coordenadas (${newCoord[0]}, ${newCoord[1]}, ${newCoord[2]})`)
+
       let fireCoord = await fire(...newCoord)
       console.log(`Começando a atirar nas coordenadas (${fireCoord[0]}, ${fireCoord[1]}, ${fireCoord[2]})`) 
 
@@ -31,4 +44,4 @@ async function moveAndFire(x, y, z) {
   }
 } 
 
-moveAndFire(30, 60, 12)
+moveAndFire(30, 60, 30)
