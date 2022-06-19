@@ -1,0 +1,25 @@
+{
+  "name": "desvendando_webpack",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.41.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.8.2"
+  },
+  "dependencies": {
+    "core-js": "^3.3.2",
+    "regenerator-runtime": "^0.13.3"
+  },
+  "description": ""
+}
