@@ -7,17 +7,10 @@ async function getPlanets() {
     return data;
 }
 
-// componentDidMount() {
-//     getPlanets().then(data => {
-//         this.setState(state => ({
-//             planets: data['planets']
-//         }))
-//     })
-// }
-
 const Planets = () => {
 
     const [planets, setPlanets] = useState([])
+    
     useEffect(() => {
         getPlanets().then(data => {
             setPlanets(data['planets'])

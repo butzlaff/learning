@@ -1,11 +1,11 @@
 import './App.css';
-import Posts from './posts';
+import Users from './components/users';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-      <Posts/>
+      <Users/>
       </header>
     </div>
   );

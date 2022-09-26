@@ -30,7 +30,7 @@ const Form = (props) => {
                 </div>
                 <div>
                     <label htmlFor="description">Description: </label>
-                    <input id="description" className="input is-primary" name="description" type="text" value={fields.description} maxLength="50" size="50" onChange={handleFieldsChange} />
+                    <input id="description" className="input is-primary" name="description" type="text" value={fields.description} maxLength="300" size="300" onChange={handleFieldsChange} />
                 </div>
                 <div>
                     <label htmlFor="link">Link: </label>
